@@ -1,6 +1,11 @@
  💸 Expense Tracker
 
-A web-based Expense Tracker built with HTML, CSS, and JavaScript. It helps you track your income and expenses, visualize them, and manage your budget effectively.
+  A web-based Expense Tracker built with HTML, CSS, and JavaScript. It helps you track your income and expenses, visualize them, and manage your budget effectively.
+
+🔗 Live Project
+
+👉 [Click here to view the Expense Tracker Live](http://expensetracker40.netlify.app) 
+
 
  🚀 Features
 - ✅ Add income and expense transactions with date, description, category, and type.
@@ -29,6 +34,7 @@ A web-based Expense Tracker built with HTML, CSS, and JavaScript. It helps you t
 
 📦 Dependencies
 - [Chart.js](https://www.chartjs.org/) for rendering the pie chart.
+
 
 
 
