@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="logo.png">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Expense Tracker</h1>
+
+            <div class="total-balance">
+                <h3>Your Balance</h3>
+                <h2 style="color: black;" id="net-balance">$0.00</h2>
+            </div>
+            <div class="income-expense-container">
+                <div class="income">
+                    <h4>Income</h4>
+                    <p id="total-income">$0.00</p>
+                </div>
+                <div class="expense">
+                    <h4>Expense</h4>
+                    <p id="total-expense">$0.00</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="add-transaction">
+            <h3>Add Transaction</h3>
+            <form id="transaction-form">
+                <div class="form-control">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required />
+                </div>
+                <div class="form-control">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" placeholder="Description" required />
+                </div>
+                <div class="form-control">
+                    <label for="edit-category">Category</label>
+                    <select id="category" required>
+                        <option value="" disabled selected>Category</option>
+                        <option>Food</option>
+                        <option>Transportation</option>
+                        <option>Entertainment</option>
+                        <option>Utilities</option>
+                        <option>Salary</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" placeholder="Amount (₹)" required />
+                </div>
+                <div class="form-control">
+                    <select id="type">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <button id="add-btn" type="submit">Add Transaction</button>
+                <p class="error" id="error-msg"></p>
+            </form>
+            <div class="filter-section">
+                <label for="filter-category">Filter by Category:</label>
+                <select id="filter-category" onchange="filterTransactions()">
+                    <option value="all">All Categories</option>
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Others">Others</option>
+                </select>
+                <label for="filter-type">Filter by Type:</label>
+                <select id="filter-type" onchange="filterTransactions()">
+                    <option value="all">All Types</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="transactions">
+            <h2 style="color:#000;;">Recent Transactions</h2>
+            <br>
+            <ul id="transaction-list"></ul>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="Expensechart">
+            <h2>Expense chart</h2>
+            <canvas id="expense-chart" width="100px" height="100px"></canvas>
+        </div>
+
+        <div class="import-export">
+            <input type="file" id="import-file" accept=".json" style="display: none;">
+            <button onclick="document.getElementById('import-file').click()">Import</button>
+            <button onclick="exportTransactions()">Export</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
